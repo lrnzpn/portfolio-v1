@@ -1,0 +1,104 @@
+@keyframes rotate45 {
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes rotateBack {
+  to {
+    transform: rotate(0);
+  }
+}
+@keyframes slideRight {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes slideLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideBack {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes rotate135 {
+  form {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-135deg);
+  }
+}
+
+.menu {
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu:before {
+  transform: translateX(-50%);
+  animation: slideBack 0.2s 0.05s ease-out forwards;
+}
+
+.menu:after {
+  transform: translateX(50%);
+  animation: slideBack 0.2s 0.05s ease-out forwards;
+}
+
+.menu .bar {
+  transform: rotate(-45deg);
+  animation: rotateBack 0.2s ease-out forwards;
+}
+
+.menu .bar:last-child {
+  transform: rotate(-135deg);
+  animation: rotateBack 0.2s 0.2s ease-out forwards;
+}
+
+.menu.active:before {
+  animation: slideLeft 0.2s 0.05s ease-out forwards;
+}
+
+.menu.active:after {
+  animation: slideRight 0.2s 0.05s ease-out forwards;
+}
+
+.menu.active .bar {
+  animation: rotate45 0.2s ease-out forwards;
+}
+
+.menu.active .bar:last-child {
+  animation: rotate135 0.2s 0.2s ease-out forwards;
+}
+
+.menu:before,
+.menu:after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  background: var(--main-black);
+}
+
+.menu .bar {
+  display: block;
+  width: 32px;
+  height: 4px;
+  background: var(--main-black);
+  margin: 8px 0;
+}
+
+.menu .bar:last-child {
+  opacity: 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 30px;
+}
