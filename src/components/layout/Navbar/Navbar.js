@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import Hamburger from "../Hamburger/Hamburger";
-import logo from "../../../assets/logos/logo.png";
+import logo from "../../../assets/images/logo.png";
 import styles from "./Navbar.module.css";
 
 const menuItems = [
@@ -27,7 +27,7 @@ const menuItems = [
 const Navbar = ({ refs }) => {
   const [showNavbar, setShowNavbar] = useState(false);
   const location = useLocation();
-
+  console.log(refs);
   useEffect(() => {
     switch (location.pathname) {
       case "/about":

@@ -16,6 +16,7 @@
   --secondary-font: "Lato", sans-serif;
 
   /* font scale */
+  --font-size-max: 5.96em;
   --font-size-9: 3.052em;
   --font-size-8: 2.441em;
   --font-size-7: 1.953em;
@@ -39,4 +40,8 @@ h1 {
   font-family: var(--primary-font);
   font-weight: 400;
   color: var(--main-gray);
+}
+
+.container {
+  padding: 24px;
 }

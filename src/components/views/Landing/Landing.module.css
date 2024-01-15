@@ -1,0 +1,107 @@
+section.landing {
+  height: 100vh;
+  background-image: linear-gradient(#f6fefb, #f3fefa, #f0fbf7);
+}
+
+.landing-wrapper {
+  display: flex;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+.landing-wrapper .animate-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+}
+
+.landing-wrapper img {
+  height: 100%;
+  object-fit: cover;
+  width: 576px;
+}
+
+.landing p {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  gap: 1.5ch;
+  width: 800px;
+  position: absolute;
+  left: 24px;
+}
+
+.landing p > span {
+  contain: paint;
+  font-family: var(--primary-font);
+  font-size: var(--font-size-max);
+  font-weight: 700;
+  padding: 8px;
+}
+
+.landing p > span:first-child {
+  color: var(--main-black);
+}
+
+.landing p > span:last-child {
+  color: var(--main-brown);
+  background-color: rgba(246, 254, 251, 0.5);
+  border-radius: 8px;
+}
+
+.slide-in {
+  animation-name: slide-in;
+}
+
+.slide-out {
+  animation-name: slide-out;
+}
+
+.slide-in,
+.slide-out {
+  animation-duration: 1.75s;
+  animation-timing-function: linear(
+    0,
+    0.6832 7.89%,
+    0.9171 11.07%,
+    1.0251,
+    1.1058 14.9%,
+    1.1619 16.86%,
+    1.1945 18.91%,
+    1.2024 20.02%,
+    1.2043 21.18%,
+    1.1907,
+    1.1598 26.27%,
+    1.0604 32.59%,
+    1.0172 35.84%,
+    0.9839 39.49%,
+    0.967 43.26%,
+    0.9639 45.77%,
+    0.9661 48.59%,
+    0.9963 60.54%,
+    1.0054 67.42%,
+    1
+  );
+}
+
+@keyframes slide-out {
+  100% {
+    opacity: 0;
+    translate: 0 100%;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    translate: 0 -100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing p > span {
+    font-size: var(--font-size-9);
+  }
+}
